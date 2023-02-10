@@ -6,6 +6,7 @@ import java.util.Calendar;
 @Entity
 public class Commentaire {
     private Long id;
+    private String commentaire;
     private Calendar createdAt;
     private Calendar updateAt;
     private Ticket ticket;
@@ -31,6 +32,7 @@ public class Commentaire {
         this.createdAt = createdAt;
     }
 
+    @Temporal(TemporalType.TIMESTAMP)
     public Calendar getUpdateAt() {
         return updateAt;
     }
@@ -55,5 +57,13 @@ public class Commentaire {
 
     public void setUtilisateur(Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
+    }
+
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
     }
 }
